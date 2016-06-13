@@ -14,7 +14,7 @@
     "chat",
     "robot"
   ],
-  "author": "Hong Jiang",
+  "author": "Hong Jiang <j@1byte.io> (http://1byte.io)",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/hjiang/role-model/issues"
