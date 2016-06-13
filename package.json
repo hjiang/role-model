@@ -1,6 +1,6 @@
 {
   "name": "role-model",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Robot on LeanEngine",
   "main": "index.js",
   "scripts": {
