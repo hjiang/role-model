@@ -1,0 +1,23 @@
+{
+  "name": "role-model",
+  "version": "0.0.1",
+  "description": "Robot on LeanEngine",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --use_strict"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hjiang/role-model.git"
+  },
+  "keywords": [
+    "chat",
+    "robot"
+  ],
+  "author": "Hong Jiang",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/hjiang/role-model/issues"
+  },
+  "homepage": "https://github.com/hjiang/role-model#readme"
+}
