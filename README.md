@@ -9,7 +9,7 @@ LeanEngine is a service provided by [LeanCloud](https://leancloud.cn).
 
 ## Instructions
 
-RoLE is available on NPM. Add `"role-model": "^0.0.4"` to your `package.json`.
+RoLE is available on NPM. Add `"role-model": "^0.0.5"` to your `package.json`.
 
 The package only exports one method `createRobotApp()`:
 ~~~javascript
@@ -38,20 +38,20 @@ messages and their handlers.
 
 You can use a list of keywords:
 ~~~javascript
-app.robot.addKeywordHandler(['ping'],
+app.robot.addHandler(['ping'],
     context => context.respond({ text: 'pong' }));
 ~~~
 If the incoming message has all the keywords, the handler will be executed.
 
 Or you can use a regular expression:
 ~~~javascript
-app.robot.addKeywordHandler(/ping/,
+app.robot.addHandler(/ping/,
     context => context.respond({ text: 'pong' }));
 ~~~
 
 Or to be most flexible, just a plain function:
 ~~~javascript
-app.robot.addKeywordHandler((msg) => msg === "ping",
+app.robot.addHandler((msg) => msg === "ping",
     context => context.respond({ text: 'pong' }));
 ~~~
 
@@ -71,4 +71,5 @@ You should be able to receive responses from your new bot.
   "engines": {
     "node": "4.x"
   }
-~~~ 
+~~~
+
