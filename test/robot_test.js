@@ -39,8 +39,8 @@ describe('Robot', function() {
     });
   });
 
-  describe('addKeywordHandler', function() {
-    it('should run the handler if keywords match', function() {
+  describe('Keyward handler', function() {
+    it('should run if keywords match', function() {
       const bot = new robot.Robot();
       let isRun = false;
       bot.addKeywordHandler(['foo', 'bar'], () => isRun = true);
@@ -48,12 +48,42 @@ describe('Robot', function() {
       expect(isRun).to.equal(true);
     });
 
-    it('should not run the handler if any keyword do not match', function() {
+    it('should not run if any keyword do not match', function() {
       const bot = new robot.Robot();
       let isRun = false;
       bot.addKeywordHandler(['foo', 'bar'], () => isRun = true);
       bot.handleRequest({text: 'foo is not br'});
       expect(isRun).to.equal(false);
+    });
+  });
+
+  describe('Regex handler', function() {
+    it('should run if the regex match', function() {
+      const bot = new robot.Robot();
+      let isRun = false;
+      bot.addRegexHandler(/fo*/, () => isRun = true);
+      bot.handleRequest({text: 'foo is not bar'});
+      expect(isRun).to.equal(true);
+    });
+
+    it('should not run if the regex does not match', function() {
+      const bot = new robot.Robot();
+      let isRun = false;
+      bot.addRegexHandler(/fu+/, () => isRun = true);
+      bot.handleRequest({text: 'foo is not bar'});
+      expect(isRun).to.equal(false);
+    });
+
+    it('should put matches into the context', function() {
+      const bot = new robot.Robot();
+      let isRun = false;
+      bot.addRegexHandler(/fo*/, (ctx) => {
+        isRun = true;
+        expect(ctx).to.have.property('matches').with.length(1);
+        expect(ctx.matches[0]).to.equal('foo');
+      });
+      bot.handleRequest({text: 'foo is not bar'});
+      expect(isRun).to.equal(true);
     });
   });
 });
