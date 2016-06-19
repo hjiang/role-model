@@ -9,7 +9,7 @@ LeanEngine is a service provided by [LeanCloud](https://leancloud.cn).
 
 ## Instructions
 
-RoLE is available on NPM. Add `"role-model": "^0.0.6"` to your `package.json`.
+RoLE is available on NPM. Add `"role-model": "^0.0.7"` to your `package.json`.
 
 The package only exports one method `createRobotApp()`:
 ~~~javascript
