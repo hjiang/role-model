@@ -9,16 +9,13 @@ LeanEngine is a service provided by [LeanCloud](https://leancloud.cn).
 
 ## Instructions
 
-RoLE is available on NPM. Add `"role-model": "^0.0.7"` to your `package.json`.
+RoLE is available on NPM. Add `"role-model": "^0.0.8"` to your `package.json`.
 
 The package only exports one method `createRobotApp()`:
 ~~~javascript
 const role = require('role-model');
 
-const app = role.createRobotApp({
-  chatService: 'bearychat',
-  chatServiceOptions: { team: 'leancloud' },
-})
+const app = role.createRobotApp({ chatService: 'bearychat' })
 ~~~
 
 As of this writing, BearyChat is the only supported service, but it is
@@ -39,20 +36,20 @@ messages and their handlers.
 You can use a list of keywords:
 ~~~javascript
 app.robot.addHandler(['ping'],
-    context => context.respond({ text: 'pong' }));
+    context => context.respond('pong'));
 ~~~
 If the incoming message has all the keywords, the handler will be executed.
 
 Or you can use a regular expression:
 ~~~javascript
 app.robot.addHandler(/ping/,
-    context => context.respond({ text: 'pong' }));
+    context => context.respond('pong'));
 ~~~
 
 Or to be most flexible, just a plain function:
 ~~~javascript
 app.robot.addHandler((msg) => msg === "ping",
-    context => context.respond({ text: 'pong' }));
+    context => context.respond('pong'));
 ~~~
 
 At the end, call
