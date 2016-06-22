@@ -4,3 +4,8 @@ node_js:
 script:
   - npm test
   - npm run lint
+addons:
+  code_climate:
+    repo_token: f36476eda09b2a138df4a892de71944c979c0bcab8ec202b00b00d5595bcaf71
+after_script:
+  - codeclimate-test-reporter < lcov.info
