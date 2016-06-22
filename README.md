@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hjiang/role-model.svg?branch=master)](https://travis-ci.org/hjiang/role-model)
+
 # RoLE model
 
 ## What's this?
