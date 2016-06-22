@@ -69,4 +69,3 @@ You should be able to receive responses from your new bot.
     "node": "4.x"
   }
 ~~~
-
