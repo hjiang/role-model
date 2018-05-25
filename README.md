@@ -17,11 +17,17 @@ The package only exports one method `createRobotApp()`:
 ~~~javascript
 const role = require('role-model');
 
-const app = role.createRobotApp({ chatService: 'bearychat' })
+const app = role.createRobotApp({
+  chatService: 'bearychat',
+  chatServiceOptions: {
+    team: process.env.BEARYCHAT_TEAM,
+    token: process.env.BEARYCHAT_TOKEN
+  }
+});
 ~~~
 
 As of this writing, BearyChat is the only supported service, but it is
-very easy to add support to other services. Please contribute.
+very easy to add support to other services. Please contribute. In the above example, the credentials were read from environment variables which can be set on the LeanCloud web console.
 
 The returned object has three properties:
 * `expressApp` - an Express app instance, which you can use to add
@@ -68,6 +74,6 @@ You should be able to receive responses from your new bot.
 **Make sure you use Node 4+**, because RoLE uses some ES6 features. So add the following to your `package.json`:
 ~~~json
   "engines": {
-    "node": "4.x"
+    "node": ">=4.x"
   }
 ~~~
