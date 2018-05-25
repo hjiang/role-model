@@ -1,6 +1,5 @@
 module.exports = {
   extends: ['airbnb', 'plugin:node/recommended'],
-  "installedESLint": true,
   plugins: [
     'node',
   ],
@@ -10,5 +9,12 @@ module.exports = {
   },
   rules: {
     'no-console': 0,
+    'class-methods-use-this': ['error', {
+      'exceptMethods': [
+        'receivingPath',
+        'createMessageContext'
+      ]
+    }],
+    "comma-dangle": ["error", "never"]
   },
 };
