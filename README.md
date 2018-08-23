@@ -26,8 +26,9 @@ const app = role.createRobotApp({
 });
 ~~~
 
-As of this writing, BearyChat is the only supported service, but it is
-very easy to add support to other services. Please contribute. In the above example, the credentials were read from environment variables which can be set on the LeanCloud web console.
+As of this writing, BearyChat and Zulip are the only supported service, but it is
+very easy to add support to other services (look at `lib\zulip.js` for an example). 
+Please contribute. In the above example, the credentials were read from environment variables which can be set on the LeanCloud web console.
 
 The returned object has three properties:
 * `expressApp` - an Express app instance, which you can use to add
